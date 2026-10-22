@@ -2,6 +2,8 @@
 
 Take a photo on your phone, and it lands on your Mac's clipboard, ready to ⌘V.
 
+![Take a photo on your phone, paste it on your Mac](../docs/how-it-works-multiplatform.png)
+
 Works from any phone with a modern browser: iPhone (Safari), Android (Chrome,
 Firefox, Samsung Internet), tablets, or another laptop. Nothing to install on
 the phone; it's a web page.
