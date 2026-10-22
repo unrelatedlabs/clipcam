@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#111214">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ClipCam">
+  <title>ClipCam</title>
+  <link rel="manifest" href="/static/manifest.webmanifest">
+  <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/icon-180.png">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main id="app">
+    <section class="viewfinder">
+      <video id="video" autoplay playsinline muted></video>
+      <div id="flash" class="flash"></div>
+      <div id="status" class="status" data-state="connecting">
+        <span class="dot"></span><span id="statusText">Connecting…</span>
+      </div>
+      <div id="camMsg" class="cam-msg" hidden>
+        <p id="camMsgText">Camera unavailable.</p>
+        <label class="btn">
+          Take photo
+          <input id="fileInput" type="file" accept="image/*" capture="environment" hidden>
+        </label>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="controls">
+      <button id="lastBtn" class="thumb-btn" aria-label="Send last photo again">
+        <img id="lastThumb" alt="">
+        <span class="badge"></span>
+      </button>
+      <button id="shutter" class="shutter" aria-label="Take photo and copy to Mac"><span></span></button>
+      <button id="flipBtn" class="icon-btn" aria-label="Switch camera">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><path d="M9.5 12.5a3 3 0 0 1 5-1.5l1 1"/><path d="M14.5 15.5a3 3 0 0 1-5 1.5l-1-1"/><path d="M15.5 10v2h-2M8.5 18v-2h2"/></svg>
+      </button>
+    </footer>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

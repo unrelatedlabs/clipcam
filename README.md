@@ -8,4 +8,8 @@ A tiny PWA camera: take a photo and it goes straight to your clipboard, ready to
 
 **Live:** https://unrelatedlabs.github.io/clipcam/
 
+## Multiplatform version
+
+[`multiplatform/`](multiplatform/) does the same thing over your network: a small Python server on your Mac receives each photo from your phone and puts it straight on the Mac's clipboard. See its [README](multiplatform/README.md).
+
 Run locally: `python3 -m http.server` and open http://localhost:8000. The camera needs HTTPS or localhost.
