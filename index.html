@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#111214">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ClipCam">
+  <title>ClipCam</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <section class="viewfinder">
+      <video id="video" autoplay playsinline muted></video>
+      <div id="flash" class="flash"></div>
+      <div id="camMsg" class="cam-msg" hidden>
+        <p id="camMsgText">Camera unavailable.</p>
+        <label class="btn">
+          Take photo
+          <input id="fileInput" type="file" accept="image/*" capture="environment" hidden>
+        </label>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="controls">
+      <button id="recentBtn" class="thumb-btn" aria-label="Recent photos">
+        <img id="lastThumb" alt="">
+        <span id="count" class="count" hidden></span>
+      </button>
+      <button id="shutter" class="shutter" aria-label="Take photo and copy"><span></span></button>
+      <button id="flipBtn" class="icon-btn" aria-label="Switch camera">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><path d="M9.5 12.5a3 3 0 0 1 5-1.5l1 1"/><path d="M14.5 15.5a3 3 0 0 1-5 1.5l-1-1"/><path d="M15.5 10v2h-2M8.5 18v-2h2"/></svg>
+      </button>
+    </footer>
+  </main>
+
+  <dialog id="sheet" class="sheet">
+    <header>
+      <h2>Recent</h2>
+      <span class="hint">Tap to copy · kept 7 days · max 20</span>
+      <button id="closeSheet" class="close" aria-label="Close">✕</button>
+    </header>
+    <ul id="grid" class="grid"></ul>
+    <p id="empty" class="empty">No photos yet.</p>
+    <footer>
+      <button id="clearAll" class="link danger">Clear all</button>
+    </footer>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

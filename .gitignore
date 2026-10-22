@@ -1,0 +1,7 @@
+# Local Netlify folder
+.netlify
+
+# Separate project, not part of this repo
+v2/
+
+.DS_Store
