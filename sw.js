@@ -1,4 +1,4 @@
-const CACHE = 'clipcam-v1';
+const CACHE = 'clipcam-v2';
 const SHELL = [
   './',
   'index.html',

@@ -16,9 +16,17 @@
 </head>
 <body>
   <main id="app">
-    <section class="viewfinder">
+    <section id="viewfinder" class="viewfinder">
       <video id="video" autoplay playsinline muted></video>
       <div id="flash" class="flash"></div>
+      <div id="focusRing" class="focus-ring"></div>
+      <button id="torchBtn" class="torch" aria-label="Flash" hidden>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+      </button>
+      <div class="zoom-bar">
+        <button id="zoomBadge" class="zoom-badge" aria-label="Reset zoom" hidden></button>
+        <div id="lenses" class="lenses" hidden></div>
+      </div>
       <div id="camMsg" class="cam-msg" hidden>
         <p id="camMsgText">Camera unavailable.</p>
         <label class="btn">
